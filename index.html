@@ -32,7 +32,7 @@
 <body class="font bg-[#F8FAFC]">
 
     <header class="pt-16">
-        <div class="header-container w-[80%] mx-auto">
+        <div class="header-container w-[90%] lg:w-[80%] mx-auto">
             <h1 class="text-3xl font-bold">Job Application Tracker</h1>
 
             <div
@@ -54,17 +54,20 @@
     </header>
 
     <main class="pt-16">
-        <div class="main-container w-[80%] mx-auto">
-            <div class="main-container-title flex justify-between">
+        <div class="main-container  w-[90%] lg:w-[80%] mx-auto">
+            <div
+                class="main-container-title flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                 <div class="title-div">
-                    <h3 class="text-2xl">Available Jobs</h3>
+                    <h3 class="text-xl md:text-2xl font-semibold">Available Jobs</h3>
                 </div>
                 <div class="job-div">
-                    <p><span class="total-count">0 Jobs</span></p>
+                    <p class=" p-4 font-medium">
+                        <span class="total-count">0 Jobs</span>
+                    </p>
                 </div>
             </div>
 
-            <div class="main-container-btn mt-6">
+            <div class="main-container-btn mt-6 flex flex-wrap gap-3">
                 <button onclick="showOnly('job-card'); toggleStyle('all-btn')" id="all-btn"
                     class="btn bg-[#3B82F6] text-white">All</button>
                 <button onclick="showOnly('interview-div'); toggleStyle('interview-btn')" id="interview-btn"
@@ -74,27 +77,29 @@
             </div>
 
             <!-- Interview Section with Default Message -->
-            <div id="interview-div" class="default-container-background rounded-2xl pb-10 m-4 p-6 space-y-4 hidden">
-                <div class="default-show flex justify-center bg-white rounded-2xl p-18">
-                    <div class="flex flex-col gap-5 sm:text-center items-center">
-                        <div class="img-div w-[100px]">
-                            <img src="/image/jobs.png" alt="No jobs">
+            <div id="interview-div" class="default-container-background rounded-2xl pb-10  pt-5  hidden">
+                <div class="default-show flex justify-center bg-white rounded-2xl p-6 sm:p-10 md:p-18">
+                    <div class="flex flex-col gap-5 items-center text-center sm:text-center md:text-left">
+                        <div class="img-div w-24 sm:w-28 md:w-32">
+                            <img src="./image/jobs.png" alt="No jobs" class="w-full h-auto">
                         </div>
-                        <h3 class="text-2xl ">No Interview Jobs</h3>
-                        <p class="text-xl text-gray-500">Check back soon for new job opportunities</p>
+                        <h3 class="text-xl sm:text-2xl md:text-3xl font-semibold">No Interview Jobs</h3>
+                        <p class="text-base sm:text-lg md:text-xl text-gray-500">Check back soon for new job
+                            opportunities</p>
                     </div>
                 </div>
             </div>
 
             <!-- Rejected Section with Default Message -->
-            <div id="rejected-div" class="default-container-background rounded-2xl pb-10 m-4 p-6 space-y-4 hidden">
+            <div id="rejected-div" class="default-container-background rounded-2xl pb-10 pt-5  hidden">
                 <div class="default-show flex justify-center bg-white rounded-2xl p-18">
                     <div class="flex flex-col gap-5 items-center">
-                        <div class="img-div w-[100px]">
-                            <img src="/image/jobs.png" alt="No jobs">
+                        <div class="img-div w-24 sm:w-28 md:w-32">
+                            <img src="./image/jobs.png" alt="No jobs">
                         </div>
-                        <h3 class="text-2xl">No Rejected Jobs</h3>
-                        <p class="text-xl text-gray-500">Check back soon for new job opportunities</p>
+                        <h3 class="text-xl sm:text-2xl md:text-3xl font-semibold">No Rejected Jobs</h3>
+                        <p class="text-base sm:text-lg md:text-xl text-gray-500">Check back soon for new job
+                            opportunities</p>
                     </div>
                 </div>
             </div>
@@ -116,8 +121,8 @@
                             <p class="notes mt-4">Build cross-platform mobile applications using React Native.</p>
                         </div>
                         <div class="card-btn flex gap-5">
-                            <button class="button-rejected btn btn-outline btn-error">Rejected</button>
-                            <button class="button-interview btn btn-outline btn-success">Interview</button>
+                            <button class="button-rejected btn sm:btn-sm btn-outline btn-error">Rejected</button>
+                            <button class="button-interview btn sm:btn-sm btn-outline btn-success">Interview</button>
                         </div>
                     </div>
                     <div class="card-right">
