@@ -1,0 +1,40 @@
+What is the difference between getElementById, getElementsByClassName, and querySelector / querySelectorAll?
+
+
+উত্তর  
+getElementById হলো যেটা দিয়ে ওই এলিমেন্ট কে  ধরা যায় যার মধ্যে ওই ID তা থাকবে ।  (Single element ধরবে) 
+getElementsByClassName হলো যেটা দিয়ে ওই এলিমেন্টগুলোকে এক সাথে  ধরা যায় যার মধ্যে ওই Class টা  থাকবে । (All matching elements ধরবে এবং HTMLCollection দিবে ) 
+
+querySelector হলো যেইটা দিয়ে নির্দিষ্ট Class/ID  থাকা এমন এলিমেন্টগুলার মধ্যে শুধু প্রথম টাকে ধরবে। (first element ধরবে)
+querySelectorAll হলো যেইটা দিয়ে নির্দিষ্ট Class/ID  থাকা সকল এলিমেন্টকে  ধরবে।  (all matching elements ধরবে এবং NodeList দিবে)
+
+
+
+How do you create and insert a new element into the DOM?
+
+উত্তর 
+createElement দিয়ে নতুন এলিমেন্ট তেইরি করা যায়. আর .appendChild() দিয়ে Parent Element এর সাথে যুক্ত করা হয় ।
+
+
+What is event bubbling? And how does it work?
+উত্তর
+Event Bubbling মানে আমরা যখন কোন কিছু তে একশেন করি তখন এইটা ওইটার মধ্যে প্রথমে যায় তারপর তার উপরের পেরেন্ট এ যায়  এভাবে উপরে যেতে থাকে । অর্থাৎ ঃ এইটা এমন যে, প্রথমে নির্দিষ্ট element-এ action হয়, পরে তার ওপর চলে যেতে থাকে। মানে গাছকে উল্টো করে দেখলে যেমন হয় — কেউ যদি ফল ধরে ঝাকুনি দেয়, তাহলে প্রথমে ফলে, তার পরে ডালে, এভাবে উপরে যেতে যেতে তার শিকরে পৌঁছে যায়।
+
+
+. What is event delegation in JavaScript? Why is it useful?
+উত্তরঃ
+event delegation পেরেন্টের মধ্যে eventlesener লাগানো যাতে তার মধ্যে থাকা সকল চাইল্ড কে সে এক্সেস করতে পারে event bubbling এর মাধ্যমে।
+এতে আলাদা আলাদা সকল চাইল্ডের মধ্যে eventlesener লাগানো লাগে না।
+অর্থাৎ ঃ কোন পেরেন্টের আইডি ধরে যদি eventlesener লাগিয়ে যদি consol.log করা হয় যে event.terget কে তাহলে যেই পেরেন্টের যে কোন চাইল্ডে ক্লিক করলে সেটাই দেখা যাবে
+
+
+
+
+
+What is the difference between the preventDefault() and stopPropagation() methods?
+উত্তর
+stopPropagation() এর মাধ্যমে মুলত Event Bubbling কে থামানো হয় অর্থাৎ তখন listener টা শুধু নির্দিষ্ট ওই এলিমেন্টের মধ্যেই থাকে , সেটা আর তার পেরেন্টে যায় না।
+
+preventDefault() এইটা দিয়ে মুলত Event এর default behavior কে থামানো যায়, যেমন কেও ফর্ম সাবমিট করলে পেইজ রিলোড নেয় কিন্তু কেও চাইলে এইটা দিয়ে রিলোড অফ করাতে পারে, তবে সেইখেত্রে তাকে Data পাঠাতে হলে আলাদা ভাবে কোড করে সার্ভারে পাঠাতে হবে।
+
+
